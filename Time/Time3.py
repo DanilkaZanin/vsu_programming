@@ -26,15 +26,11 @@ class Time:
         else:
             return True
 
-    def time_now(self):
+class TimeStamp(Time):
+#я же правильно понял что теперь он именно хранит текущее время , а выводим мы его на строке 41 ?
+     def time_now(self):
         now = datetime.today()
         return f'{now.hour}:{now.minute}:{now.second}'
-
-class TimeStamp(Time):
-
-    def print_time_now(self):
-        parent = super()
-        return parent.time_now()
 
 time = Time(23 , 42 , 70)
 #time.time_input()
@@ -42,4 +38,4 @@ print(time.__str__())
 print(time._Time__validate())
 
 ts = TimeStamp(1,2,3)
-print(ts.print_time_now())
+print(ts.time_now())
